@@ -3,18 +3,18 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import RidgeClassifierCV
 from sklearn.metrics import accuracy_score
-import miniROCKET as mr
-import minirocket_multivariate as mrm
-import raster_multivariate as rsm
-import classifier as CLF
-from grsr_module import improved_multi_curve_feature_pruner_exp # experimental version
+import hiervar.miniROCKET as mr
+import hiervar.minirocket_multivariate as mrm
+import hiervar.raster_multivariate as rsm
+import hiervar.classifier as CLF
+from hiervar.grsr_module import improved_multi_curve_feature_pruner_exp # experimental version
 from sklearn.linear_model import RidgeClassifierCV
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import RidgeClassifierCV
 
 from sklearn.decomposition import PCA
-import grsr_module 
+import hiervar.grsr_module 
     
      
 #########

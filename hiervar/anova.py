@@ -3,9 +3,9 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_selection import mutual_info_classif
 from sklearn.feature_selection import f_classif as sklearn_f_classif
-import RASTER
+import hiervar.RASTER as RASTER
 import matplotlib.pyplot as plt
-import miniROCKET as mr
+import hiervar.miniROCKET as mr
 
 
 
