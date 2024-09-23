@@ -1,4 +1,5 @@
 # HIERVAR
+## A Hierarchical Feature Selection Method for Time Series Analysis
 
 Time series classification stands as a pivotal and intricate challenge across various domains, including finance, healthcare, and industrial systems. In contemporary research, there has been a notable upsurge in exploring feature extraction through random sampling. Unlike deep convolutional networks, these methods sidestep elaborate training procedures, yet they often necessitate generating a surplus of features to comprehensively encapsulate time series nuances. Consequently, some features may lack relevance to labels or exhibit multi-collinearity with others. In this paper, we propose a novel hierarchical feature selection method aided by ANOVA variance analysis to address this challenge. Through meticulous experimentation, we demonstrate that our method substantially reduces features by over 94\% while preserving accuracy-- a significant advancement in the field of time series analysis and feature selection.
 
