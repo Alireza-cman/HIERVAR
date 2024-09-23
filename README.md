@@ -4,7 +4,8 @@ Time series classification stands as a pivotal and intricate challenge across va
 
 ## How to use
 
-`# Import necessary libraries and modules from the 'hiervar' package
+```python
+# Import necessary libraries and modules from the 'hiervar' package
 import hiervar.RASTER as RASTER
 import hiervar.anova as anova
 import hiervar.classifier as classifier
@@ -34,8 +35,7 @@ accuracy_mini, _, clf = classifier.classic_classifier(
 )
 print("Number of Features: ", x_train_trans_mini.shape[1], "Accuracy: ", accuracy_mini)
 
-# Use ANOVA to prune features from MiniROCKET-transformed data
-# 'divider=2' indicates that features will be halved based on ANOVA selection
+# Use HIERVAR to prune features from MiniROCKET-transformed data
 result, erocket_index, selected_mean = anova.anova_erocket_pruner(
     x_train_trans_mini, y_train, threshold=None, divider=2, verbose=False
 )
@@ -44,7 +44,7 @@ result, erocket_index, selected_mean = anova.anova_erocket_pruner(
 accuracy_erocket_modified, _, _ = classifier.classic_classifier(
     x_train_trans_mini[:, result], y_train, x_test_trans_mini[:, result], y_test
 )
-print("Number of Features (After ANOVA): ", len(result), "Accuracy: ", accuracy_erocket_modified)
+print("Number of Features (After HIERVAR): ", len(result), "Accuracy: ", accuracy_erocket_modified)
 
 # Apply the full RASTER transformation with the same number of features (10,000)
 x_train_trans_raster, x_test_trans_raster, parameter_raster = RASTER.RASTER(
@@ -57,7 +57,7 @@ accuracy_raster, _, clf = classifier.classic_classifier(
 )
 print("Number of Features: ", x_train_trans_raster.shape[1], "Accuracy: ", accuracy_raster)
 
-# Prune features again using ANOVA on the RASTER-transformed data
+# Prune features again using HIERVAR on the RASTER-transformed data
 result, erocket_index, selected_mean = anova.anova_erocket_pruner(
     x_train_trans_raster, y_train, threshold=None, divider=2, verbose=False
 )
@@ -66,5 +66,5 @@ result, erocket_index, selected_mean = anova.anova_erocket_pruner(
 accuracy_erocket_modified, _, _ = classifier.classic_classifier(
     x_train_trans_raster[:, result], y_train, x_test_trans_raster[:, result], y_test
 )
-print("Number of Features (After ANOVA): ", len(result), "Accuracy: ", accuracy_erocket_modified)
-`
+print("Number of Features (After HIERVAR): ", len(result), "Accuracy: ", accuracy_erocket_modified)
+```
